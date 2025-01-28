@@ -1,27 +1,24 @@
-import { Layout, Menu } from "antd";
+import { Layout, Typography } from "antd";
 const { Header } = Layout;
+const { Title } = Typography;
 
 export default function MainHeader() {
-  const items = new Array(3).fill(null).map((_, index) => ({
-    key: index + 1,
-    label: `nav ${index + 1}`,
-  }));
-
   return (
     <Header
       style={{
+        background: "#fff",
+        padding: "0 16px",
         display: "flex",
-        alignItems: "end",
+        justifyContent: "space-between",
+        alignItems: "center",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <div className="demo-logo">Logooooooo</div>
+      <Title level={4} style={{ margin: 0 }}>
+         Dashboard
+      </Title>
       <div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={["2"]}
-          items={items}
-        />
+        <span style={{ marginRight: "16px" }}>Welcome, Admin</span>
       </div>
     </Header>
   );
