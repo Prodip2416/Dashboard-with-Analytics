@@ -1,5 +1,5 @@
 const Monitor = () => {
-  return <div>Monitor</div>;
+  return <div  className="text-2xl">Monitor</div>;
 };
 
 export default Monitor;
