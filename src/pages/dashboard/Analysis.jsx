@@ -17,7 +17,7 @@ const Analysis = () => {
     }
   };
 
-  return <div>analysis</div>;
+  return <div className="text-2xl">Analysis</div>;
 };
 
 export default Analysis;

@@ -1,5 +1,5 @@
 const Workplace = () => {
-  return <div>Workplace</div>;
+  return <div className="text-2xl">Workplace</div>;
 };
 
 export default Workplace;

@@ -1,19 +1,25 @@
-import {
-  Form,
-  Input,
-  Button,
-  Checkbox,
-  Tabs,
-  Typography,
-  Row,
-  Col,
-} from "antd";
-import { LockOutlined, PhoneOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Checkbox, Tabs, Typography, message } from "antd";
+import { LockOutlined } from "@ant-design/icons";
+import { useAuth } from "../auth/AuthContext";
 
 const { TabPane } = Tabs;
 const { Title, Text } = Typography;
 
 const Login = () => {
+  const { login } = useAuth();
+
+  const onSubmit = async (values) => {
+    if (values?.username === "admin" || values?.username === "user") {
+      if (values?.password === "123456") {
+        login(values);
+      }else{
+        message.error("Please enter password: 123456");
+      }
+    } else {
+      // show error message
+      return false;
+    }
+  };
   return (
     <div
       style={{
@@ -41,13 +47,14 @@ const Login = () => {
           </Text>
         </div>
 
-        <Tabs defaultActiveKey="2" centered>
+        <Tabs defaultActiveKey="1" centered>
           {/* Account Login Tab */}
           <TabPane tab="Account Login" key="1">
             <Form
               name="normal_login"
               initialValues={{ remember: true }}
               layout="vertical"
+              onFinish={onSubmit}
             >
               <Form.Item
                 name="username"
@@ -69,7 +76,7 @@ const Login = () => {
               >
                 <Input.Password
                   prefix={<LockOutlined />}
-                  placeholder="Password: ant.design"
+                  placeholder="Password: 123456"
                 />
               </Form.Item>
 
@@ -89,7 +96,7 @@ const Login = () => {
           </TabPane>
 
           {/* Phone Login Tab */}
-          <TabPane tab="Phone Login" key="2">
+          {/* <TabPane tab="Phone Login" key="2">
             <Form
               name="phone_login"
               initialValues={{ remember: true }}
@@ -144,7 +151,7 @@ const Login = () => {
                 </Button>
               </Form.Item>
             </Form>
-          </TabPane>
+          </TabPane> */}
         </Tabs>
       </div>
     </div>
