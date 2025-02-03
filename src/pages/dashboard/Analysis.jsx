@@ -8,6 +8,7 @@ import LineWithDetails from "../../components/dashboard/analysis/LineWithDetails
 import PieCard from "../../components/dashboard/analysis/PieCard";
 import UserDataTable from "../../components/dashboard/analysis/UserDataTable";
 import MultiLineCard from "../../components/dashboard/analysis/MultiLineCard";
+import HorizontalProgress from "../../components/dashboard/analysis/HorizontalProgress";
 
 const Analysis = () => {
   useEffect(() => {
@@ -50,6 +51,7 @@ const Analysis = () => {
           <UserDataTable />
         </div>
         <div className="col-span-1 sm:col-span-2 md:grid-cols-2 lg:col-span-4 xl:col-span-4 bg-white p-4 shadow">
+          <HorizontalProgress/>
           <MultiLineCard />
         </div>{" "}
       </div>{" "}
