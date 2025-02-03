@@ -28,7 +28,7 @@ const PieCard = () => {
     legend: {
       color: {
         title: false,
-        position: "right",
+        position: "left",
         rowPadding: 5,
       },
     },

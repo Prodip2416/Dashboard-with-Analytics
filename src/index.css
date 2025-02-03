@@ -4,3 +4,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
+.scroll-container {
+  overscroll-behavior-x: contain;
+}
