@@ -1,5 +1,6 @@
-import { dashboardMenus } from "./dashboardMenus";
-import { formMenus } from "./formMenus";
-import { listMauns } from "./listMenus";
+import { dashboardMenus } from './dashboardMenus';
+// import { formMenus } from './formMenus';
+// import { listMauns } from './listMenus';
 
-export const menuItems = [dashboardMenus, formMenus, listMauns];
+export const menuItems = [dashboardMenus];
+// export const menuItems = [dashboardMenus, formMenus, listMauns];
